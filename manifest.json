@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "ReGepi",
+    "version": "0.1",
+  
+    "description": "Améliore et modernise l'interface de GEPI",
+  
+    "content_scripts": [
+      {
+        "matches": ["*://lfabuc.fr/ac/*"],
+        "js": ["regepi.js"]
+      }
+    ]
+  }
+  
