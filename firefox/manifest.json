@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "ReGepi",
+    "version": "0.1",
+  
+    "description": "Améliore et modernise l'interface de GEPI",
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.lfabuc.fr/ac/*"],
+        "js": ["main.js"]
+      }
+    ],
+
+    "web_accessible_resources": [
+      {
+        "resources": ["*.css", "*.js"],
+        "matches": ["*://*.lfabuc.fr/ac/*"]
+      }
+    ]
+  }
+  
