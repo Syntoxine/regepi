@@ -1,8 +1,5 @@
-h1 {
-    color: palegreen;
-}
-
 h3.alert {
+    display: inline-block;
     background-color: oklch(59% 0.17 30);
     border: solid 8px oklch(59% 0.17 30);
 }
