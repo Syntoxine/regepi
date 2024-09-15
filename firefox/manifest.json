@@ -4,6 +4,10 @@
     "version": "0.1",
   
     "description": "Améliore et modernise l'interface de GEPI",
+
+    "icons": {
+      "256": "icon.png"
+    },
   
     "content_scripts": [
       {
