@@ -6,4 +6,12 @@ let button_divs = document.querySelector("#temoin_messagerie_non_vide + div");
     element.style.display = "none";
 });
 
+
+// Remove last connection
+let last_conection = document.querySelector(".colonne1");
+last_conection.style.display = "none";
+
+
+
+
 console.log("accueil.js successfully loaded.");

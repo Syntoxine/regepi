@@ -27,8 +27,57 @@ body::before {
 
 body {
     font-family: inherit;
+    width: 100vw;
+    background-color: #fbf2c4;
 }
+
+h3.alert {
+    display: inline-block;
+    background-color: oklch(59% 0.17 30);
+    border: solid 8px oklch(59% 0.17 30);
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+
 
 h1, h2, h3, h4, h5, h6 {
     font-variant-caps: normal !important;
+}
+
+/* GEPI Interface Modifications */
+
+/* Remove useless things */
+
+.porte-voix-croix {
+    display: none;
+}
+
+/* Fix the top bar non-compactness */
+
+.bandeau_colonne {
+    vertical-align: top;
+    width: fit-content;
+}
+
+#bd_colonne_droite {
+    vertical-align: top;
+    width: 60%;
+}
+
+.Title_Alert {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: baseline;
+    width: fit-content;
+}
+
+.Title_Alert>* {
+    margin: 4px 8px;
+}
+
+#bandeau {
+    width: 100vw;
+    background: #008585;
 }
