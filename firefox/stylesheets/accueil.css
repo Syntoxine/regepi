@@ -1,0 +1,13 @@
+div#bandeau {
+    background-color: var(--overlay0);
+    background: none;
+}
+
+h2.accueil {
+    width: inherit;
+    margin: inherit;
+    padding: inherit;
+    font-size: inherit;
+    color: var(--mauve);
+    background: none;
+}

@@ -12,7 +12,7 @@
     "content_scripts": [
       {
         "matches": ["*://*.lfabuc.fr/ac/*"],
-        "js": ["main.js"]
+        "js": ["scripts/main.js"]
       }
     ],
 

@@ -1,3 +1,5 @@
+@import url('palette.css');
+
 /* Inter Font */
 
 :root {
@@ -9,35 +11,30 @@
     :root { font-family: InterVariable, sans-serif; }
   }
 
-/* ReGEPI Debug */
-
-body::before {
-    content: "ReGEPI";
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    z-index: 9999;
-    border: 2px solid #333;
-    background-color: paleturquoise;
-    color: #333;
-    padding: 8px;
-}
-
 /* GEPI Interface Modifications */
 
 body {
     font-family: inherit;
     width: 100vw;
-    background-color: #fbf2c4;
+    background-color: var(--base);
+    color: var(--text);
 }
 
-h3.alert {
+a, a:visited {
+    color: var(--pink);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* h3.alert {
     display: inline-block;
     background-color: oklch(59% 0.17 30);
     border: solid 8px oklch(59% 0.17 30);
     border-radius: 8px;
     margin-top: 4px;
-}
+} */
 
 
 
@@ -45,17 +42,15 @@ h1, h2, h3, h4, h5, h6 {
     font-variant-caps: normal !important;
 }
 
-/* GEPI Interface Modifications */
-
 /* Remove useless things */
 
-.porte-voix-croix {
+/* .porte-voix-croix {
     display: none;
-}
+} */
 
 /* Fix the top bar non-compactness */
 
-.bandeau_colonne {
+/* .bandeau_colonne {
     vertical-align: top;
     width: fit-content;
 }
@@ -80,4 +75,4 @@ h1, h2, h3, h4, h5, h6 {
 #bandeau {
     width: 100vw;
     background: #008585;
-}
+} */
