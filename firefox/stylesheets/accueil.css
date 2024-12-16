@@ -1,9 +1,17 @@
-div#bandeau {
-    background-color: var(--overlay0);
+#bandeau {
+    background-color: var(--overlay2);
     background: none;
 }
 
-h2.accueil {
+.bandeau_colonne {
+    color: var(--text);
+}
+
+#bandeau a:link, #bandeau a:hover, #bandeau a:visited {
+    color: var(--pink);
+}
+
+.accueil {
     width: inherit;
     margin: inherit;
     padding: inherit;

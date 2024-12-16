@@ -13,11 +13,14 @@
 
 /* GEPI Interface Modifications */
 
+:root {
+    color: var(--text);
+}
+
 body {
     font-family: inherit;
     width: 100vw;
     background-color: var(--base);
-    color: var(--text);
 }
 
 a, a:visited {
@@ -25,6 +28,7 @@ a, a:visited {
 }
 
 a:hover {
+    color: inherit;
     text-decoration: underline;
 }
 
