@@ -1,40 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil</title>
-    <!-- Pas sûr de ça !!!
-     <link rel = "stylesheets" href = "../stylesheets/accueil.css"> -->
-</head>
-<body>
+    <style>
+      :root{
+        font-family: sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: oklch(0.4 0 0);
+        color: #fff;
+      }
+
+      main {
+        border: 4px solid lightblue;
+        background-color: oklch(from lightblue calc(l*1.1) c h);
+        height: 100vh;
+        width: 80vw;
+      }
+
+      #board {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+        gap: 16px;
+        margin: 16px 0;
+      }
+
+      .group {
+        max-width: 25vw;
+        margin: 0 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px 32px;
+        border: 4px solid lightcoral;
+        border-radius: 8px;
+        background-color: oklch(from lightcoral calc(l*1.1) c h);
+      }
+
+      .group-header {
+        list-style: none;
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+      }
+
+      .group-items {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .group-items > li {
+        list-style: none;
+        font-size: clamp(1rem, 1.2vw, 1.5rem);
+        border: 4px solid lightgreen;
+        border-radius: 10px;
+        background-color: oklch(from lightgreen calc(l*1.1) c h);
+        display: flex;
+        align-items: center;
+        justify-items: center;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-
-        <div class = "containerheader">
-            <a href = "accueil.html"><img src = "../icon.png" alt = "Logo de reGEPI"> </a>
-            <img src = "../PDP.png" alt = "Profil utilisateur">
-        </div>
-
+      <h1>GEPI</h1>
+      <button>Menu</button>
     </header>
-
     <main>
-
-        <h3>Cahier de textes</h3>
-        <ul>
+      <div id="board">
+        <ul class="group agenda">
+          <li class="group-header">Cahier de textes</li>
+          <ul class="group-items">
             <li>Devoirs</li>
             <li>Contrôles</li>
+          </ul>
         </ul>
-        <h3>Bulletins et notes</h3>
-        <ul>
-            <li>Bulletins</li>
+        <ul class="group  notes">
+          <li class="group-header">Bulletins et notes</li>
+          <ul class="group-items">
             <li>Relevés de notes</li>
-            <li>Notes Parcousup</li>
+            <li>Notes Parcoursup</li>
+          </ul>
         </ul>
-        <div class = "bandeaulatteral">
-            <!-- Implémenter le bandeau latteral, avec liste et trucs cliquables en bulles :
-             sur le côté -->
-        </div>
-
+      </div>
     </main>
-</body>
+  </body>
 </html>
