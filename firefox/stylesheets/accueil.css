@@ -1,13 +1,70 @@
-div#bandeau {
-    background-color: var(--overlay0);
-    background: none;
-}
+:root{
+    font-family: sans-serif;
+  }
 
-h2.accueil {
-    width: inherit;
-    margin: inherit;
-    padding: inherit;
-    font-size: inherit;
-    color: var(--mauve);
-    background: none;
-}
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: oklch(0.4 0 0);
+    color: #fff;
+  }
+
+  main {
+    border: 4px solid lightblue;
+    background-color: oklch(from lightblue calc(l*1.1) c h);
+    height: 100vh;
+    width: 80vw;
+  }
+
+  #board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .group {
+    max-width: 25vw;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px;
+    border: 4px solid lightcoral;
+    border-radius: 8px;
+    background-color: oklch(from lightcoral calc(l*1.1) c h);
+  }
+
+  .group-header {
+    list-style: none;
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+  }
+
+  .group-items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .group-items > li {
+    list-style: none;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    border: 4px solid lightgreen;
+    border-radius: 10px;
+    background-color: oklch(from lightgreen calc(l*1.1) c h);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
