@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <style>
+    polygon {
+      fill: oklch(90% 0 0);
+    }
+  </style>
+  <polygon points="31 0 28 0 28 1 31 1 31 4 32 4 32 1 32 0 31 0"/>
+  <polygon points="0 1 0 4 1 4 1 1 4 1 4 0 1 0 0 0 0 1"/>
+  <polygon points="32 31 32 28 31 28 31 31 28 31 28 32 31 32 32 32 32 31"/>
+  <polygon points="1 32 4 32 4 31 1 31 1 28 0 28 0 31 0 32 1 32"/>
+</svg>

@@ -8,34 +8,30 @@
     <script src="../scripts/accueil.js" defer></script>
   </head>
   <body>
-    <header>
-        <nav class = "navbar">
-            <a href = "#" class = "logo">GEPI</a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href = "#">Profil</a></li>
-                    <li><a href = "#">Acceuil</a></li>
-                    <li><a href = "#">Alertes</a></li>
-                    <li><a href = "#">Déconnexion</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <main>
       <div id="board">
-        <div class="group agenda">
-          <h3 class="group-header">Cahier de textes</h3>
-          <div class="group-items">
-            <a class="btn" href="#">Devoirs</a>
-            <a class="btn" href="#">Contrôles</a>
-          </div>
+        <div class="agenda-col">
+          <header title="Cahier de textes">
+            <h2>Cahier de textes</h2>
+          </header>
+          <section id="devoirs">
+            <a href="cahier_texte/consultation.php" class="section-header">Devoirs</a>
+          </section>
+          <section id="controles">
+            <a href="cahier_texte/controle_ele_resp.php" class="section-header">Contrôles</a>
+          </section>
         </div>
-        <div class="group notes">
-          <h3 class="group-header">Bulletins et notes</h3>
-          <div class="group-items">
-            <a class="btn" href="#">Relevés de notes</a>
-            <a class="btn" href="#">Notes Parcoursup</a>
-          </div>
+
+        <div class="agenda-col">
+          <header title="Bulletins et notes">
+            <h2>Bulletins et notes</h2>
+          </header>
+          <section id="releves">
+            <a href="bulletins_notes/releves_notes.php" class="section-header">Relevés de notes</a>
+          </section>
+          <section id="parcoursup">
+            <a href="bulletins_notes/parcoursup.php" class="section-header">Notes Parcoursup</a>
+          </section>
         </div>
       </div>
     </main>

@@ -1,14 +1,8 @@
 :root{
     font-family: sans-serif;
   }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header {
+  
+  #top-header {
     box-sizing: border-box;
     width: 100%;
     padding: 0 10vw;
@@ -21,69 +15,32 @@
     list-style: none;
   }
 
-  main {
-    box-sizing: border-box;
-    border: 4px solid lightblue;
-    background-color: oklch(from lightblue calc(l*1.1) c h);
-    height: 100vh;
-    width: 80vw;
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../assets/cross-background.svg") repeat;
+    background-size: 3rem;
   }
 
   #board {
     display: flex;
     flex-flow: row wrap;
-    justify-content: start;
-    gap: 16px;
-    margin: 16px 0;
-  }
-
-  .group {
-    max-width: 25vw;
-    margin: 0 16px;
-    display: flex;
-    flex-direction: column;
-    padding: 16px 32px;
-    gap: 8px;
-    border: 4px solid lightcoral;
-    border-radius: 8px;
-    background-color: oklch(from lightcoral calc(l*1.1) c h);
-  }
-
-  .group-header {
-    font-size: clamp(24px, 17.728px + 1.394vw, 32px);
-    border: 1px solid red;
-  }
-
-  .group-items {
-    display: flex;
-    flex-flow: row wrap;
     justify-content: flex-start;
-    gap: 16px;
+    align-items: flex-start;
+    column-gap: 3rem;
   }
 
-  .btn {
-    font-size: 0.9rem;
-    width: 100px;
-    height: 100px;
-    border: 4px solid lightgreen;
-    border-radius: 10px;
-    background-color: oklch(from lightgreen calc(l*1.1) c h);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-  }
-
-  .navbar {
-    position:absolute;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .agenda-col {
     box-sizing: border-box;
+    padding: 2rem;
+    border-radius: .7rem;
+    background-color: oklch(1 0 0);
+    box-shadow: .05rem .05rem .2rem .2rem oklch(66% 0 0 / 0.1);
   }
 
-  .navbar a {
-    color: white;
-    justify-content: center;
-  }
+  /* @media (max-width: 992px) {
+    .agenda-col {
+      flex: 
+    }
+  } */
