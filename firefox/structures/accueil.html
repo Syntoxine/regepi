@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil</title>
-    <link rel="stylesheet" href="../stylesheets/accueil.css">
-    <script src="../scripts/accueil.js" defer></script>
-  </head>
-  <body>
-    <main>
-      <div id="board">
-        <div class="agenda-col">
-          <header title="Cahier de textes">
-            <h2>Cahier de textes</h2>
-          </header>
-          <section id="devoirs">
-            <a href="cahier_texte/consultation.php" class="section-header">Devoirs</a>
-          </section>
-          <section id="controles">
-            <a href="cahier_texte/controle_ele_resp.php" class="section-header">Contrôles</a>
-          </section>
-        </div>
 
-        <div class="agenda-col">
-          <header title="Bulletins et notes">
-            <h2>Bulletins et notes</h2>
-          </header>
-          <section id="releves">
-            <a href="bulletins_notes/releves_notes.php" class="section-header">Relevés de notes</a>
-          </section>
-          <section id="parcoursup">
-            <a href="bulletins_notes/parcoursup.php" class="section-header">Notes Parcoursup</a>
-          </section>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil</title>
+  <link rel="stylesheet" href="../stylesheets/accueil.css" />
+  <script src="../scripts/accueil.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div id="board">
+      <div class="agenda-col">
+        <header title="Cahier de textes">
+          <h2>Cahier de textes</h2>
+        </header>
+        <section id="devoirs">
+          <a href="cahier_texte/consultation.php" class="section-header">Devoirs</a>
+        </section>
+        <section id="controles">
+          <a href="cahier_texte/controle_ele_resp.php" class="section-header">Contrôles</a>
+        </section>
       </div>
-    </main>
-  </body>
+
+      <div class="agenda-col">
+        <header title="Bulletins et notes">
+          <h2>Bulletins et notes</h2>
+        </header>
+        <section id="releves">
+          <a href="bulletins_notes/releves_notes.php" class="section-header">Relevés de notes</a>
+        </section>
+        <section id="bulletins">
+          <a href="bulletins/bull_lect_erzb.php" class="section-header">Bulletins PDF</a>
+        </section>
+        <section id="parcoursup">
+          <a href="bulletins_notes/parcoursup.php" class="section-header">Notes Parcoursup</a>
+        </section>
+      </div>
+      
+    </div>
+  </main>
+</body>
+
 </html>

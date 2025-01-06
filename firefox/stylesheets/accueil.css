@@ -1,46 +1,68 @@
-:root{
-    font-family: sans-serif;
-  }
-  
-  #top-header {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 10vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: oklch(0.4 0 0);
-    color: #fff;
-    text-decoration: none;
-    list-style: none;
-  }
+:root {
+  font-family: sans-serif;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url("../assets/cross-background.svg") repeat;
-    background-size: 3rem;
-  }
+#top-header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: oklch(0.4 0 0);
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
 
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: url("../assets/cross-background.svg") repeat;
+  background-size: 3rem;
+}
+
+#board {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 3rem;
+}
+
+.agenda-col {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 0.7rem;
+  background-color: oklch(1 0 0);
+  box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (width <= 768px) {
   #board {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    column-gap: 3rem;
+    flex-direction: column;
+    align-items: stretch;
   }
-
   .agenda-col {
-    box-sizing: border-box;
-    padding: 2rem;
-    border-radius: .7rem;
-    background-color: oklch(1 0 0);
-    box-shadow: .05rem .05rem .2rem .2rem oklch(66% 0 0 / 0.1);
+    width: calc(100% - 3rem);
+    margin: 0 auto;
   }
+}
 
-  /* @media (max-width: 992px) {
-    .agenda-col {
-      flex: 
-    }
-  } */
+@media screen and (768px <= width <= 1200px) {
+  .agenda-col {
+    flex: 1 1 calc(20rem + (10rem * (100vw - 768px) / 432px));
+    max-width: 30rem;
+    min-width: 20rem;
+  }
+}
+
+@media screen and (width <= 1200px) {
+  .agenda-col {
+    flex: 1 1 30rem;
+    max-width: 30rem;
+  }
+}
