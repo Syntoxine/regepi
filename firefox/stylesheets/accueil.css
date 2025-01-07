@@ -65,6 +65,7 @@ h2 {
 }
 
 .navbar .nav-links ul {
+  list-style: none;
   display: flex;
 }
 

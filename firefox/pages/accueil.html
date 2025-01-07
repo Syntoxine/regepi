@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../stylesheets/accueil.css" />
+    <script src="../scripts/accueil.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accueil</title>
-  <link rel="stylesheet" href="../stylesheets/accueil.css" />
-  <script src="../scripts/accueil.js" defer></script>
-</head>
+  <body>
+    <nav class="navbar">
+      <a href="accueil.php" class="logo">GEPI</a>
 
-<body>
-
-  <nav class = "navbar">
-    <a href="https://www.lfabuc.fr/ac/accueil.php" class = "logo">GEPI</a>
-
-    <div class="nav-links">
+      <div class="nav-links">
         <ul>
-            <li><a href = "https://www.lfabuc.fr/ac/utilisateurs/mon_compte.php">Profil</a></li>
-            <li><a href = "https://www.lfabuc.fr/ac/accueil.php">Acceuil</a></li>
-            <li><a href = "https://www.lfabuc.fr/ac/mod_alerte/form_alerte_bis.php?mode=afficher_boite_a">Alertes</a></li>
-            <li><a href = "https://www.lfabuc.fr/ac/logout.php?auto=0">Déconnexion</a></li>
+          <li><a href="utilisateurs/mon_compte.php">Profil</a></li>
+          <li><a href="accueil.php">Accueil</a></li>
+          <li>
+            <a href="mod_alerte/form_alerte_bis.php?mode=afficher_boite_a"
+              >Alertes</a
+            >
+          </li>
+          <li><a href="logout.php?auto=0">Déconnexion</a></li>
         </ul>
-    </div>
-    <img src="menu-btn.png" class = "menu-hamburger" alt="burger menu icon">
-</nav>
-
-
-  <main>
-    <div id="board">
-      <div class="agenda-col">
-        <header title="Cahier de textes">
-          <h2>Cahier de textes</h2>
-        </header>
-        <section id="devoirs">
-          <div class="section-header">
-            <a href="cahier_texte/consultation.php" class="section-header">Devoirs</a>
-          </div>
-        </section>
-        <section id="controles">
-          <div class="section-header">
-            <a href="cahier_texte/controle_ele_resp.php" class="section-header">Contrôles</a>
-          </div>
-        </section>
       </div>
+      <img src="menu-btn.png" class="menu-hamburger" alt="burger menu icon" />
+    </nav>
 
-      <div class="agenda-col">
-        <header title="Bulletins et notes">
-          <h2>Bulletins et notes</h2>
-        </header>
-        <section id="releves">
-          <div class="section-header">
-            <a href="cahier_notes/visu_releve_notes_ter.php" class="section-header">Relevés de notes</a>
-          </div>
-        </section>
-        <section id="bulletins">
-          <div class="section-header">
-            <a href="bulletin/bull_lect_erzb.php" class="section-header">Bulletins PDF</a>
-          </div>
-        </section>
-        <section id="parcoursup">
-          <div class="section-header">
-            <a href="bulletin/parcoursup.php" class="section-header">Notes Parcoursup</a>
-          </div>
-        </section>
+    <main>
+      <div id="board">
+        <div class="agenda-col">
+          <header title="Cahier de textes">
+            <h2>Cahier de textes</h2>
+          </header>
+          <section id="devoirs">
+            <div class="section-header">
+              <a href="cahier_texte/consultation.php" class="section-header"
+                >Devoirs</a
+              >
+            </div>
+          </section>
+          <section id="controles">
+            <div class="section-header">
+              <a
+                href="cahier_texte/controle_ele_resp.php"
+                class="section-header"
+                >Contrôles</a
+              >
+            </div>
+          </section>
+        </div>
+
+        <div class="agenda-col">
+          <header title="Bulletins et notes">
+            <h2>Bulletins et notes</h2>
+          </header>
+          <section id="releves">
+            <div class="section-header">
+              <a
+                href="cahier_notes/visu_releve_notes_ter.php"
+                class="section-header"
+                >Relevés de notes</a
+              >
+            </div>
+          </section>
+          <section id="bulletins">
+            <div class="section-header">
+              <a href="bulletin/bull_lect_erzb.php" class="section-header"
+                >Bulletins PDF</a
+              >
+            </div>
+          </section>
+          <section id="parcoursup">
+            <div class="section-header">
+              <a href="bulletin/parcoursup.php" class="section-header"
+                >Notes Parcoursup</a
+              >
+            </div>
+          </section>
+        </div>
       </div>
-      
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
