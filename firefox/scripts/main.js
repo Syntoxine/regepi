@@ -16,11 +16,6 @@ stylesheet.href = browser.runtime.getURL('stylesheets/main.css');
 
 document.head.appendChild(stylesheet);
 
-// // Change GEPI FavIcon to ReGEPI Icon
-// const favicon = document.querySelector('link[rel="shortcut icon"]');
-// favicon.href = browser.runtime.getURL('favicon.ico');
-
-
 // Add corresponding page script and stylesheet
 const page_script = document.createElement('script');
 const page_stylesheet = document.createElement('link');
@@ -30,36 +25,28 @@ page_script.defer = true;
 
 let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
 if (match) {
-    page_script.src = browser.runtime.getURL(`scripts/${match[1]}.js`);
-    page_stylesheet.href = browser.runtime.getURL(`stylesheets/${match[1]}.css`);
+    const pageName = match[1];
+    page_script.src = browser.runtime.getURL(`scripts/${pageName}.js`);
+    page_stylesheet.href = browser.runtime.getURL(`stylesheets/${pageName}.css`);
     document.head.appendChild(page_script);
     document.head.appendChild(page_stylesheet);
+
+    const htmlFilePath = browser.runtime.getURL(`pages/${pageName}.html`);
+    fetch(htmlFilePath).then((response) => {
+        if (response.ok) {
+            return response.text();
+        } else {
+            throw new Error(`HTML file not found: ${response.status}`);
+        }
+    })
+    .then((htmlContent) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlContent, 'text/html');
+        document.body.innerHTML = doc.body.innerHTML;
+    })
+    .catch((error) => {
+        console.error(`Error fetching HTML file: ${error.message}`);
+    });
 } else {
     console.log("Unsupported page (Non-PHP).")
 }
-
-// // Remove undesirables
-// let minimize_button = document.querySelector(".change_taille_gd");
-// minimize_button.style.display = "none";
-
-// let alert_heading = document.querySelector("h1 + h3");
-// alert_heading.classList.add("alert");
-// alert_heading.textContent = alert_heading.textContent.split(' ')[0];
-
-// // Make the student name and class more compact
-// let NomEleve = document.querySelector("p#bd_nom");
-// NomEleve.style.display = "inline-block";
-// let ClasseEleve = document.querySelector("p#bd_nom + p");
-// ClasseEleve.style.display = "inline-block";
-
-// const bandeau = document.querySelector("div#bandeau");
-// const colonneGauche = document.querySelector(".bandeau_colonne");
-
-// let h1 = document.querySelector("h1");
-// let alert = document.querySelector("h3.alert");
-
-// let div = document.createElement("div");
-// div.classList.add("Title_Alert");
-// div.appendChild(h1);
-// div.appendChild(alert);
-// colonneGauche.appendChild(div);
