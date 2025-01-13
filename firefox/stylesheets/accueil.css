@@ -19,6 +19,12 @@ body {
   column-gap: 3rem;
 }
 
+.sections-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
 .agenda-col {
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -157,24 +163,61 @@ h2 {
 }
 
 section {
-  border-top: 2px solid oklch(0.95 0 0);
-  padding-bottom: 2rem;
-  padding-top: 1rem;
+  padding: 0;
 }
 
-.section-header {
+.icon {
   display: flex;
-  flex-flow: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
 }
 
-.section-header > a {
-  color: black;
+.icon > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
-  font-size: 1.2rem;
+  color: black;
 }
 
-.section-header > a::after {
+.icon > a > svg {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  background-color: oklch(0.95 0 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon > a:hover > svg {
+  background-color: oklch(0.8 0 0);
+  transform: scale(1.1);
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.4rem oklch(66% 0 0 / 0.2);
+}
+
+.icon > a > img {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  background-color: oklch(0.95 0 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid oklch(0.8 0 0);
+  box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon > a:hover > img {
+  background-color: oklch(0.9 0 0);
+  transform: scale(1.1);
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.4rem oklch(66% 0 0 / 0.2);
+}
+
+.icon > a::after {
   content: "↗";
   display: inline-block;
   height: 12px;
