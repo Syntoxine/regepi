@@ -36,7 +36,6 @@ h2 {
 }
 
 .navbar {
-  position:absolute;
   padding: 30px;
   display: flex;
   justify-content: space-between;
