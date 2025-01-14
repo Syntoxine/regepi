@@ -18,7 +18,7 @@
 
     "web_accessible_resources": [
       {
-        "resources": ["*.html", "*.css", "*.js", "*.png", "*.ico"],
+        "resources": ["*.html", "*.css", "*.js", "*.png", "*.svg", "*.ico"],
         "matches": ["*://*.lfabuc.fr/ac/*"]
       }
     ]
