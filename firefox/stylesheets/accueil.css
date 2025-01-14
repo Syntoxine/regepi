@@ -79,6 +79,13 @@ h2 {
   right: 30px;
 }
 
+.navbar .menu-cross {
+  display: none;
+  position: absolute;
+  width: 35px;
+  right: 30px;
+}
+
 
 @media screen and (width <= 768px) {
   #board {
@@ -109,20 +116,28 @@ h2 {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     margin-left: +100%;
-    transition: all 0.3s ease;
-     
+    transition: all 0.3s ease; 
 }    
 
 .nav-links.mobile-menu {
     margin-left: 0;
 }
 
+.navbar .menu-hamburger.mobile-menu {
+  display: none;
+}
+
+.navbar .menu-cross.mobile-menu {
+  display: block;
+  top: 35px;
+}
+
 .nav-links ul{
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     justify-content: space-evenly;
     padding-right: 35px;
 }
@@ -130,10 +145,12 @@ h2 {
 .navbar .nav-links ul li {
     margin: 25px 0;
     font-size: 1.2em;
+    background-color: rgba(231, 222, 222, 0.76);
+    padding: 1rem;
+    border-radius: 1rem; 
 }
 
 .navbar .logo  {
-
     position: absolute;
     top: 30px;
     left: 35px
