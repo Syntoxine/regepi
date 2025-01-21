@@ -3,6 +3,7 @@
 }
 
 body {
+  margin: 0;
   width: 100vw;
   overflow-x: hidden;
   display: flex;
@@ -17,6 +18,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   column-gap: 3rem;
+  margin: 1rem;
 }
 
 .sections-wrapper {
@@ -48,6 +50,7 @@ h2 {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  background: linear-gradient(90deg, #030829 0%, #0f1b63 50%, #e3e5f2 100%);
 }
 
 .navbar a {
