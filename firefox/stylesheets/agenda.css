@@ -1,0 +1,25 @@
+#board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 3rem;
+    margin: 1rem;
+  }
+  
+  .sections-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+  }
+  
+  .agenda-col {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    padding: 2rem;
+    padding-top: 1rem;
+    border-radius: 0.7rem;
+    background-color: oklch(1 0 0);
+    box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+    margin-bottom: 1.5rem;
+  }
