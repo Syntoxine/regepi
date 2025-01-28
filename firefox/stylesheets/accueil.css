@@ -1,7 +1,7 @@
 @import url(navbar.css);
 @import url(agenda.css);
-@import url(mediaqueries.css);
 @import url(icon.css);
+
 :root {
   font-family: sans-serif;
 }
@@ -20,7 +20,6 @@ h2 {
   text-align: center;
   font-size: 1.5rem;
 }
-
 
 section {
   padding: 0;
