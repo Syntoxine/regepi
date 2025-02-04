@@ -23,6 +23,7 @@ page_stylesheet.rel = 'stylesheet';
 page_script.type = 'text/javascript';
 page_script.defer = true;
 
+// Replace page with corresponding html page
 let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
 if (match) {
     const pageName = match[1];
