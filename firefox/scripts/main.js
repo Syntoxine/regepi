@@ -10,7 +10,7 @@ document.head.appendChild(inter_preconnect);
 document.head.appendChild(inter_stylesheet);
 
 // On obtient le nom de l'utilisateur
-const nomUtilisateur = document.querySelector("#bd_nom");
+const nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
 
 // Add main ReGEPI stylesheet
 const stylesheet = document.createElement('link');
@@ -55,7 +55,12 @@ if (match) {
 }
 
 // Transformation de Profil dans la Navbar par Prénom et Nom de l'utilisateur
-console.log(document);
-let profil = document.querySelector("#profil");
-console.log(profil);
-profil.innerHTML = nomUtilisateur;
+const observer = new MutationObserver((mutations, observer) => {
+    let profil = document.querySelector("#profil");
+    if (profil) {
+        profil.innerText = nomUtilisateur;
+        observer.disconnect();
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
