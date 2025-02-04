@@ -5,9 +5,10 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(90deg, #030829 0%, #0f1b63 50%, #e3e5f2 100%);
+    background-color: white;
+    /* background: linear-gradient(90deg, #030829 0%, #0f1b63 50%, #e3e5f2 100%); */
   }
-  
+
   .navbar a {
     color: rgb(0, 0, 0);
   }
