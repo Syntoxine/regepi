@@ -9,8 +9,6 @@ inter_stylesheet.href = 'https://rsms.me/inter/inter.css';
 document.head.appendChild(inter_preconnect);
 document.head.appendChild(inter_stylesheet);
 
-// On obtient le nom de l'utilisateur
-const nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
 
 // Add main ReGEPI stylesheet
 const stylesheet = document.createElement('link');
@@ -27,6 +25,12 @@ page_script.type = 'text/javascript';
 page_script.defer = true;
 
 let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
+
+if (match !== "login"){
+    // On obtient le nom de l'utilisateur
+    const nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
+}
+
 if (match) {
     const pageName = match[1];
     page_script.src = browser.runtime.getURL(`scripts/${pageName}.js`);
