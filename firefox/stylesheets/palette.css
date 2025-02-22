@@ -29,36 +29,72 @@
     --rosewater: #dc8a78; */
     color-scheme: light dark;
 
-    --light-main:#eff0f3;
-    --light-background:#eff0f3;
-    --light-headline:#0d0d0d;
-    --light-text:#2a2a2a;
-    --light-text-secondary:#0d0d0d;
-    --light-primary:#ff8e3c;
-    --light-secondary:#fffffe;
-    --light-tertiary:#d9376e;
-
-    --dark-main:#fffffe;
-    --dark-background:#0f0e17;
-    --dark-headline:#fffffe;
-    --dark-text:#a7a9be;
-    --dark-text-secondary:#0d0d0d;
-    --dark-primary:#ff8906;
-    --dark-secondary:#f25f4c;
-    --dark-tertiary:#e53170;
+    --main:#eff0f3;
+    --background:#eff0f3;
+    --headline:#0d0d0d;
+    --text:#2a2a2a;
+    --text-secondary:#0d0d0d;
+    --primary:#ff8e3c;
+    --secondary:#fffffe;
+    --tertiary:#d9376e;
 }
 
-* {
-    background-color: light-dark(var(--light-background), var(--dark-background));
+.darkmode {--main:#fffffe;
+    --background:#0f0e17;
+    --headline:#fffffe;
+    --text:#a7a9be;
+    --text-secondary:#0d0d0d;
+    --primary:#ff8906;
+    --secondary:#f25f4c;
+    --tertiary:#e53170;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#theme-switch {
+    height: 3.125rem;
+    width: 3.125rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+}
+
+#theme-switch svg{
+    fill: var(--secondary);
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+
+/* * {
+    background-color: dark(var(--background), var(--background));
 }
 
 p a {
-    color: light-dark(var(--light-text), var(--dark-text));
+    color: dark(var(--text), var(--text));
 }
 
-h1 {
-    color: light-dark(var(--light-headline), var(--dark-headline));
-}
+h1 h2 h3 h4 h5 h6 {
+    color: dark(var(--headline), var(--headline));
+} */
 
 /* Dark Mode (Catppuccin Macchiato Palette) */
 
