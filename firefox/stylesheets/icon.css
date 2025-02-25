@@ -14,7 +14,7 @@
     color: black;
   }
   
-  .icon > a > img {
+  .icon > a > svg {
     width: 3rem;
     height: 3rem;
     margin-bottom: 0.5rem;
@@ -26,7 +26,7 @@
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .icon > a:hover > img {
+  .icon > a:hover > svg {
     background-color: oklch(0.9 0 0);
     transform: scale(1.1);
     box-shadow: 0.1rem 0.1rem 0.4rem 0.4rem oklch(66% 0 0 / 0.025);
