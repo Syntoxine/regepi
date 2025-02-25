@@ -1,34 +1,7 @@
-/* Light Mode (Catppuccin Latte Theme */
+/* Mode clair, définition de fonctions correspondant aux couleurs utilisées dans la page en mode clair */
 
 :root {
-    /* --crust: #dce0e8;
-    --mantle: #e6e9ef;
-    --base: #eff1f5;
-    --surface0: #ccd0da;
-    --surface1: #bcc0cc;
-    --surface2: #acb0be;
-    --overlay0: #9ca0b0;
-    --overlay1: #8c8fa1;
-    --overlay2: #7c7f93;
-    --subtext0: #6c6f85;
-    --subtext1: #5c5f77;
-    --text: #4c4f69;
-    --lavender: #7287fd;
-    --blue: #1e66f5;
-    --sapphire: #209fb5;
-    --sky: #04a5e5;
-    --teal: #179299;
-    --green: #40a02b;
-    --yellow: #df8e1d;
-    --peach: #fe640b;
-    --maroon: #e64553;
-    --red: #d20f39;
-    --mauve: #8839ef;
-    --pink: #ea76cb;
-    --flamingo: #dd7878;
-    --rosewater: #dc8a78; */
     color-scheme: light dark;
-
     --main:#eff0f3;
     --background:#eff0f3;
     --headline:#0d0d0d;
@@ -38,6 +11,8 @@
     --secondary:#fffffe;
     --tertiary:#d9376e;
 }
+
+/* Mode sombre, définition de fonctions correspondant aux couleurs utilisées dans la page en mode sombre */
 
 .darkmode {--main:#fffffe;
     --background:#0f0e17;
@@ -53,6 +28,8 @@ body{
     background-color: var(--background);
     color: var(--text);
 }
+
+/* Caractéristiques du bouton permettant le changement de thème */
 
 #theme-switch {
     height: 3.125rem;
@@ -72,6 +49,8 @@ body{
     fill: var(--secondary);
 }
 
+/* Affiche, en fonction de la présence de la classe darkmode, l'icône soleil ou l'icône lune */
+
 #theme-switch svg:last-child{
     display: none;
 }
@@ -83,46 +62,3 @@ body{
 .darkmode #theme-switch svg:last-child{
     display: block;
 }
-
-/* * {
-    background-color: dark(var(--background), var(--background));
-}
-
-p a {
-    color: dark(var(--text), var(--text));
-}
-
-h1 h2 h3 h4 h5 h6 {
-    color: dark(var(--headline), var(--headline));
-} */
-
-/* Dark Mode (Catppuccin Macchiato Palette) */
-
-/* :root {
-    --crust: #232634;
-    --mantle: #292c3c;
-    --base: #303446;
-    --surface0: #414559;
-    --surface1: #51576d;
-    --surface2: #626880;
-    --overlay0: #737994;
-    --overlay1: #838ba7;
-    --overlay2: #949cbb;
-    --subtext0: #a5adce;
-    --subtext1: #b5bfe2;
-    --text: #c6d0f5;
-    --lavender: #babbf1;
-    --blue: #8caaee;
-    --sapphire: #85c1dc;
-    --sky: #99d1db;
-    --teal: #81c8be;
-    --green: #a6d189;
-    --yellow: #e5c890;
-    --peach: #ef9f76;
-    --maroon: #ea999c;
-    --red: #e78284;
-    --mauve: #ca9ee6;
-    --pink: #f4b8e4;
-    --flamingo: #eebebe;
-    --rosewater: #f2d5cf;
-} */
