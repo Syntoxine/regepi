@@ -62,7 +62,6 @@ if (match) {
     page_stylesheet.href = browser.runtime.getURL(`stylesheets/${pageName}.css`);
     document.head.appendChild(page_stylesheet);
     document.head.appendChild(page_script);
-
     // On change le nom de la page
     let title = pageName.charAt(0).toUpperCase() + pageName.slice(1);
     document.title = "reGEPI • " + title;
@@ -72,13 +71,48 @@ if (match) {
 
 
 
-// Transformation de Profil dans la Navbar par Prénom et Nom de l'utilisateur
 const observer = new MutationObserver((mutations, observer) => {
+    // Transformation de Profil dans la Navbar par Prénom et Nom de l'utilisateur
     let profil = document.querySelector("#profil");
     if (profil) {
         profil.innerText = nomUtilisateur;
         observer.disconnect();
     }
+
+
+
+    // On ajoute la fonctionnalité au menu mobile
+    let menuHamburger = document.querySelector(".menu-hamburger");
+    let menuCross = document.querySelector(".menu-cross")
+    let navLinks = document.querySelector(".nav-links");
+    
+    menuHamburger.addEventListener('click', () => {navLinks.classList.toggle('mobile-menu')});
+    menuHamburger.addEventListener('click', () => {menuHamburger.classList.toggle('mobile-menu')});
+    menuHamburger.addEventListener('click', () => {menuCross.classList.toggle('mobile-menu')});
+    menuCross.addEventListener('click', () => {navLinks.classList.remove('mobile-menu')});
+    menuCross.addEventListener('click', () => {menuHamburger.classList.toggle('mobile-menu')});
+    menuCross.addEventListener('click', () => {menuCross.classList.toggle('mobile-menu')});
+
+    // et la fonctionnalité au bouton qui permet de changer le thème
+    let darkmode = localStorage.getItem('darkmode')
+    const themeSwitch = document.getElementById('theme-switch')
+
+    const enableDarkmode = () => {
+        document.body.classList.add('darkmode')
+        localStorage.setItem('darkmode', 'active')
+    }
+
+    const disableDarkmode = () => {
+        document.body.classList.remove('darkmode')
+        localStorage.setItem('darkmode', null)
+    }
+
+    if(darkmode === "active") enableDarkmode()
+
+    themeSwitch.addEventListener("click", () => {
+        darkmode = localStorage.getItem('darkmode')
+        darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+    })
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
