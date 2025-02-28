@@ -29,6 +29,27 @@ body{
     color: var(--text);
 }
 
+body.darkmode {
+    background-color: var(--background);
+    color: var(--text);
+}
+body.darkmode .navbar {
+    background-color: var(--background);
+    color: var(--headline);
+}
+/* body.darkmode .navbar .navlinks{
+    background-color: var(--background);
+    color: var(--text);
+} */
+body.darkmode #board {
+    background-color: var(--background);
+    color: var(--text);
+}
+body.darkmode #board .agenda-col {
+    background-color: var(--background);
+    color: var(--text);
+} 
+
 /* Caractéristiques du bouton permettant le changement de thème */
 
 #theme-switch {
