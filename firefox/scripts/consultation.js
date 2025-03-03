@@ -13,7 +13,7 @@ function convertDate(date) {
     return [year, monthMap[month], day];
 }
 
-function getHomework(doc) {
+function getHomework() {
     let homeworks = document.querySelectorAll('.matiere_a_faire');
     let homeworkData = [];
 
@@ -44,18 +44,41 @@ function getHomework(doc) {
     return homeworkData;
 }
 
-let incomingHomework = getHomework(document);
-let furthestDate = convertDate(incomingHomework[-1].date);
-fetch('URL_OF_THE_OTHER_PAGE')
-    .then(response => response.text())
-    .then(html => {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(html, 'text/html');
-        let otherPageHomework = getHomework(doc);
-        console.log(otherPageHomework);
-    })
-    .catch(error => console.error('Error fetching the page:', error));
-let homework = getHomework
+// async function getAllHomework() {
+//     let allHomework = getHomework(document);
+//     let furthestDate = convertDate(allHomework.at(-1).date);
 
-console.log(getHomework(document));
- 
+//     while (true) {
+//         let response = await fetch(`https://lfabuc.fr/ac/cahier_texte/consultation.php?year=${furthestDate[0]}&month=${furthestDate[1]}&day=${furthestDate[2]}`);
+//         let html = response.text();
+//         let parser = new DOMParser();
+//         let doc = parser.parseFromString(html, 'text/html');
+//         let otherHomework = getHomework(doc);
+
+//         if (otherHomework.length === 0) break;
+
+//         allHomework = allHomework.concat(otherHomework);
+//         furthestDate = convertDate(otherHomework.at(-1).date);
+//     }
+//     return allHomework;
+    
+// }
+
+function renderHomework() {
+    const container = document.getElementById("homeworkContainer");
+    homeworkItems.forEach(item => {
+        const homeworkDiv = document.createElement("div");
+        homeworkDiv.classList.add("homework-item");
+        
+        homeworkDiv.innerHTML = `
+            <div class="subject">${item.subject}</div>
+            <div class="date">Due: ${item.date}</div>
+            <p>${item.content}</p>
+        `;
+        
+        container.appendChild(homeworkDiv);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', renderHomework);
