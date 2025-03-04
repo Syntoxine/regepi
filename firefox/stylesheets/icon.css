@@ -1,0 +1,33 @@
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .icon > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .icon > a > img {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+    background-color: oklch(0.95 0 0);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid oklch(0.8 0 0);
+    box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .icon > a:hover > img {
+    background-color: oklch(0.9 0 0);
+    transform: scale(1.1);
+    box-shadow: 0.1rem 0.1rem 0.4rem 0.4rem oklch(66% 0 0 / 0.025);
+  }

@@ -9,6 +9,9 @@ inter_stylesheet.href = 'https://rsms.me/inter/inter.css';
 document.head.appendChild(inter_preconnect);
 document.head.appendChild(inter_stylesheet);
 
+// On obtient le nom de l'utilisateur
+const nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
+
 // Add main ReGEPI stylesheet
 const stylesheet = document.createElement('link');
 stylesheet.rel = 'stylesheet';
@@ -51,3 +54,14 @@ if (match) {
 } else {
     console.log("Unsupported page (Non-PHP).")
 }
+
+// Transformation de Profil dans la Navbar par Prénom et Nom de l'utilisateur
+const observer = new MutationObserver((mutations, observer) => {
+    let profil = document.querySelector("#profil");
+    if (profil) {
+        profil.innerText = nomUtilisateur;
+        observer.disconnect();
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
