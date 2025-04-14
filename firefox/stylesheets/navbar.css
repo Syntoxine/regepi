@@ -10,7 +10,7 @@
   }
 
   .navbar a {
-    color: rgb(0, 0, 0);
+    color: inherit;
   }
   
   .navbar .nav-links a:hover {
