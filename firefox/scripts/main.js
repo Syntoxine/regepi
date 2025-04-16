@@ -28,7 +28,7 @@ page_script.defer = true;
 
 
 // On récupère le nom du document
-let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
+let match = document.location.pathname.match(/\/([^\/]+)\.php(?:\?.*)?$/);
 
 // On obtient le nom de l'utilisateur
 let nomUtilisateur = "Profil"; // Nom d'utilisateur par défaut si on échoue à obtenir le nom d'utilisateur
