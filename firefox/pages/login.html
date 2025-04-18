@@ -3,26 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../stylesheets/accueil.css" />
-    <script src="../scripts/accueil.js" defer></script>
-    <script src="../scripts/darkmode.js" defer></script>
   </head>
-
-<body>
-  <form action="action_page.php" method="post">
-    <div class="container">
-      <label for="uname"><b>Identifiant</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-  
-      <label for="psw"><b>Mot de passe</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit">Connexion</button>
-    </div>
-  
-    <div class="container">
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</body>
+  <body>
+    <form action="login.php" method="post">
+      <div id="identification">
+        <div id="div_login_entete">
+          <h1>LYCEE FRANCO-ALLEMAND</h1>
+          <p class="annee">2024/2025</p>
+        </div>
+        <div id="div_login">
+          <p class="message">Veuillez vous identifier pour accéder à Gepi.</p>
+          <p class="droite">
+            <label for="login">Identifiant</label>
+            <input type="text" id="login" name="login" required />
+          </p>
+          <p class="droite">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required />
+          </p>
+          <p class="droite">
+            <input type="submit" value="Connexion" />
+          </p>
+          <p id="mot_passe">
+            <a href="#">Mot de passe oublié ?</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
