@@ -41,8 +41,7 @@
                   
     <!-- Identifiant -->				
             <p class="droite" title="Saisissez l'identifiant qui vous a été donné.">
-              <label for="login">Identifiant</label>
-              <input type="text" id="login" name="login" size="17" tabindex="1">
+              <input aria-label="Identifiant" type="text" id="login" name="login" size="17" tabindex="1">
             </p>
                 
     <!-- Mot de passe -->				
@@ -76,7 +75,7 @@
       }
     </script>
     <!--p>Cela fonctionne avec Firefox et Chrome, mais avec MSIE qui interdit les changements de type d'un input.</p-->
-              <input type="password" id="no_anti_inject_password" name="no_anti_inject_password" size="17" onkeypress="capsDetect(arguments[0]);" tabindex="2">
+              <input aria-label="Mot de passse" type="password" id="no_anti_inject_password" name="no_anti_inject_password" size="17" onkeypress="capsDetect(arguments[0]);" tabindex="2">
             </p>
               
     <!-- Bouton valider -->				
