@@ -9,24 +9,37 @@ inter_stylesheet.href = 'https://rsms.me/inter/inter.css';
 document.head.appendChild(inter_preconnect);
 document.head.appendChild(inter_stylesheet);
 
+// Ajout des documents de la librairie Bootstrap
+const bootstrap_stylesheet = document.createElement('link');
+bootstrap_stylesheet.rel = 'stylesheet';
+bootstrap_stylesheet.href = browser.runtime.getURL('stylesheets/bootstrap.min.css');
+const bootstrap_script = document.createElement('script');
+bootstrap_script.src = browser.runtime.getURL('scripts/bootstrap.bundle.min.js');
+
+document.head.appendChild(bootstrap_stylesheet);
+document.head.appendChild(bootstrap_script);
+
+
 // On obtient le nom de l'utilisateur
 const nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
 
-// Add main ReGEPI stylesheet
+// ajout de la feuille de style ReGEPI
 const stylesheet = document.createElement('link');
 stylesheet.rel = 'stylesheet';
 stylesheet.href = browser.runtime.getURL('stylesheets/main.css');
 
 document.head.appendChild(stylesheet);
 
-// Add corresponding page script and stylesheet
+// Ajout de la feuille de style et le script correspondant à la page
 const page_script = document.createElement('script');
 const page_stylesheet = document.createElement('link');
 page_stylesheet.rel = 'stylesheet';
 page_script.type = 'text/javascript';
 page_script.defer = true;
 
-// Replace page with corresponding html page
+// Remplacement de la page par la page HTML correspondante
+// on vérifie si l'URL de la page est bien une page PHP
+// et on extrait le nom de la page à partir de l'URL
 let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
 if (match) {
     const pageName = match[1];

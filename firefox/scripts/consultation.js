@@ -19,13 +19,13 @@ function getHomework() {
 
     homeworks.forEach(homework => {
         let date = getPreviousSibling(homework, 'h3.titre_a_faire').innerText;
+        date = date.substring(27);
         let subjectTitle = homework.querySelector('h4').innerText;
         const content = homework.querySelector('p').innerText;
         const isExam = homework.querySelector('img[alt="contrôle"]') !== null;
         const mediaLinks = Array.from(homework.querySelectorAll('ul li a')).map(link => link.href);
     
-        separator = isExam ? "durée d'effort estimée (en min)" : "durée estimée pour ce travail (en min)"
-        date = date.substring(27);
+        let separator = isExam ? "durée d'effort estimée (en min)" : "durée estimée pour ce travail (en min)"
         let [subject, duration] = subjectTitle.split(separator);
         subject = subject.trim();
         duration = duration.split(":")[0].trim();
@@ -44,41 +44,69 @@ function getHomework() {
     return homeworkData;
 }
 
-// async function getAllHomework() {
-//     let allHomework = getHomework(document);
-//     let furthestDate = convertDate(allHomework.at(-1).date);
-
-//     while (true) {
-//         let response = await fetch(`https://lfabuc.fr/ac/cahier_texte/consultation.php?year=${furthestDate[0]}&month=${furthestDate[1]}&day=${furthestDate[2]}`);
-//         let html = response.text();
-//         let parser = new DOMParser();
-//         let doc = parser.parseFromString(html, 'text/html');
-//         let otherHomework = getHomework(doc);
-
-//         if (otherHomework.length === 0) break;
-
-//         allHomework = allHomework.concat(otherHomework);
-//         furthestDate = convertDate(otherHomework.at(-1).date);
-//     }
-//     return allHomework;
-    
-// }
-
-function renderHomework() {
+function renderHomework(homeworkItems) {
     const container = document.getElementById("homeworkContainer");
-    homeworkItems.forEach(item => {
-        const homeworkDiv = document.createElement("div");
-        homeworkDiv.classList.add("homework-item");
+    
+    const grouped = {};
+    if (homeworkItems.length !== 0) {
+        const noHomeworkAlert = document.getElementById("noHomework");
+        noHomeworkAlert.parentNode.removeChild(noHomeworkAlert);
+
+        homeworkItems.forEach(item => {
+            homeworkItems.forEach(item => {
+                if (!grouped[item.date]) grouped[item.date] = [];
+                if (!grouped[item.date].includes(item)) grouped[item.date].push(item);
+            });
+        });
         
-        homeworkDiv.innerHTML = `
-            <div class="subject">${item.subject}</div>
-            <div class="date">Due: ${item.date}</div>
-            <p>${item.content}</p>
-        `;
-        
-        container.appendChild(homeworkDiv);
-    });
-}
+        Object.keys(grouped).sort().forEach(date => {
+            const card = document.createElement("div");
+            card.className = "card shadow-sm";
+    
+            card.innerHTML = `
+                <div class="card-header bg-primary text-white fw-semibold fs-5">
+                    ${date}
+                </div>
+                <div class="list-group list-group-flush"></div>
+            `;
+    
+            const listGroup = card.querySelector(".list-group");
+    
+            grouped[date].forEach(item => {
+                const entry = document.createElement("div");
+                entry.className = "list-group-item";
+    
+                entry.innerHTML = `
+                    <div class="d-flex justify-content-between">
+                        <h5 class="mb-1">${item.subject}</h5>
+                        ${item.duration ? `<small class="text-muted">${item.duration} min</small>` : ""}
+                    </div>
+                    <p class="mb-1">${item.content}</p>
+                    ${item.isExam ? `<span class="badge bg-danger">Contrôle</span>` : ""}
+                    ${item.mediaLinks.length > 0 ? `
+                        <div class="mt-2">
+                            ${item.mediaLinks.map(link => `<a href="${link}" target="_blank" class="btn btn-sm btn-outline-primary me-2">📎 Pièce jointe</a>`).join('')}
+                        </div>
+                    ` : ""}
+                `;
+    
+                listGroup.appendChild(entry);
+            });
+    
+            container.appendChild(card);
+        });
+    }
+};
 
 
-document.addEventListener('DOMContentLoaded', renderHomework);
+let homeworkItems = getHomework();
+
+const observer = new MutationObserver((mutationsList, observer) => {
+    const container = document.getElementById("homeworkContainer");
+    if (container) {
+        renderHomework(homeworkItems);
+        observer.disconnect();
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
