@@ -41,7 +41,8 @@
                   
     <!-- Identifiant -->				
             <p class="droite" title="Saisissez l'identifiant qui vous a été donné.">
-              <input aria-label="Identifiant" type="text" id="login" name="login" size="17" tabindex="1">
+              <label for="login">Identifiant</label>
+              <input type="text" id="login" name="login" size="17" tabindex="1" placeholder="Identifiant">
             </p>
                 
     <!-- Mot de passe -->				
@@ -75,7 +76,7 @@
       }
     </script>
     <!--p>Cela fonctionne avec Firefox et Chrome, mais avec MSIE qui interdit les changements de type d'un input.</p-->
-              <input aria-label="Mot de passse" type="password" id="no_anti_inject_password" name="no_anti_inject_password" size="17" onkeypress="capsDetect(arguments[0]);" tabindex="2">
+              <input type="password" id="no_anti_inject_password" name="no_anti_inject_password" size="17" onkeypress="capsDetect(arguments[0]);" tabindex="2" placeholder="Mot de passe">
             </p>
               
     <!-- Bouton valider -->				
@@ -84,7 +85,7 @@
             </p>
     <!-- Adresse courriel de l'administrateur -->
             <p id="mot_passe">
-              <a href="mailto:gepiadmin@lfabuc.fr">Mot de passe oublié ?</a>
+              <a href="mailto:gepiadmin@lfabuc.fr" tabindex="4">Mot de passe oublié ?</a>
             </p>
           </div>
         </div>
