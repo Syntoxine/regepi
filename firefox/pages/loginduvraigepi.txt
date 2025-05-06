@@ -1,0 +1,166 @@
+<body onload="observeur()">
+
+<!-- Site en maintenance -->
+	<p class="maintenance">
+			
+	</p>
+
+<!-- Cahier de texte public -->	
+	
+
+<!-- identification -->
+	<form action="login.php" method="post">
+		<input type="hidden" name="auth_sso_secours" value="n">
+		<div id="identification">
+				
+<!-- Utilisation multisite -->
+			<p class="cache">
+				<input type="hidden" name="rne" value="">
+			</p>
+				
+<!-- Entête -->				
+								
+			<div id="div_login_entete">
+				<h1>LYCEE FRANCO-ALLEMAND   DEUTSCH-FRANZÖSISCHES GYMNASIUM</h1>
+				<p class="annee">2024/2025</p>
+			</div>
+					
+			<div id="div_login">
+			
+<!-- Message -->	
+				<p class="message">
+					Afin d'utiliser Gepi, vous devez vous identifier.
+				</p>
+				
+<!-- Cadenas -->
+				<div>
+					<img class="cadenas" style="padding: 0" src="images/icons/lock.png" alt="" title="">
+				</div>		
+							
+<!-- Identifiant -->				
+				<p class="droite" title="Saisissez l'identifiant qui vous a été donné.">
+					<label for="login">Identifiant</label>
+					<input type="text" id="login" name="login" size="17" tabindex="1">
+				</p>
+						
+<!-- Mot de passe -->				
+				<p class="droite" title="Saisissez votre mot de passe en respectant les minuscules et les majuscules.">
+					<label for="no_anti_inject_password">Mot de passe</label><span id="span_liens_js_no_anti_inject_password" style="">
+	<a href="javascript:champ_text_no_anti_inject_password()" id="lien_text_no_anti_inject_password" title="Rendre le champ de saisie du mot de passe lisible (afficher en clair)."><img src="/ac/images/icons/visible.png" width="19" height="16" alt="Mot de passe en clair"></a>
+	<a href="javascript:champ_password_no_anti_inject_password()" id="lien_password_no_anti_inject_password" style="display:none" title="Rendre le champ de saisie du mot de passe non lisible par ceux qui regardent par dessus votre épaule (masquer)."><img src="/ac/images/icons/invisible.png" width="19" height="16" alt="Mot de passe masqué"></a>
+</span>
+
+<script type="text/javascript">
+	isIE_input_password_to_text = (document.all);
+	if(!isIE_input_password_to_text) {
+		document.getElementById('span_liens_js_no_anti_inject_password').style.display='';
+	}
+
+	function champ_text_no_anti_inject_password() {
+		if(confirm("Vous allez afficher votre saisie de mot de passe en clair.\nSi quelqu'un regarde par dessus votre épaule où si vous vidéoprojetez au tableau votre écran, ce n'est pas souhaitable.\nEtes-vous sûr de vouloir afficher le mot de passe en clair ?")) {
+			document.getElementById('no_anti_inject_password').setAttribute('type', 'text');
+			//setTimeout("document.getElementById('no_anti_inject_password').setAttribute('type', 'text')", 1000);
+
+			document.getElementById('lien_text_no_anti_inject_password').style.display='none';
+			document.getElementById('lien_password_no_anti_inject_password').style.display='';
+		}
+	}
+	function champ_password_no_anti_inject_password() {
+		document.getElementById('no_anti_inject_password').setAttribute('type','password');
+		//setTimeout("document.getElementById('no_anti_inject_password').setAttribute('type', 'password')", 1000);
+
+			document.getElementById('lien_text_no_anti_inject_password').style.display='';
+			document.getElementById('lien_password_no_anti_inject_password').style.display='none';
+	}
+</script>
+<!--p>Cela fonctionne avec Firefox et Chrome, mais avec MSIE qui interdit les changements de type d'un input.</p-->
+					<input type="password" id="no_anti_inject_password" name="no_anti_inject_password" size="17" onkeypress="capsDetect(arguments[0]);" tabindex="2">
+				</p>
+					
+<!-- Bouton valider -->				
+				<p class="droite" title="Envoyer les identifiants">
+					<input type="submit" name="submit" id="soumettre" value="Valider" tabindex="3">
+				</p>
+<!-- Adresse courriel de l'administrateur -->
+				<p>
+				<span style="font-size:x-small; color:grey"> &nbsp;&nbsp;&nbsp;&nbsp;Contact : gepiadmin@lfabuc.fr </span>
+				</p>
+									
+<!-- Mot de passe oublié -->
+				<p id="mot_passe">
+				<span title="Cliquez pour demander un nouveau mot de passe">
+				&nbsp;
+					
+				</span>
+				<br>
+<!-- Demande de compte/mot de passe -->
+				<span id="demande_compte_mot_de_passe" title="Cliquez pour demander/récupérer un compte/mot de passe">
+				&nbsp;
+					
+				</span>
+				</p>
+			</div>
+		</div>
+
+	</form>
+
+<!-- Message pour la page de login -->
+
+	
+<!-- Switcher de gabarit -->
+	
+
+	<div class="center info">
+<!-- fermeture de l identification par SSO 20220912 -->
+<!-- Identification par SSO -->
+<!--
+		<p>
+			<a href='login_sso.php'>
+				<img src='images/icons/forward_.png' alt=''/>
+				Se connecter en utilisant le service d'authentification unique
+			</a>
+		</p>
+-->		
+<!-- Information vie privée -->
+		<p>
+			<a href="gestion/info_vie_privee.php" onclick="centrerpopup('gestion/info_vie_privee.php',700,480,'scrollbars=yes,statusbar=no,resizable=yes');return false;">
+			<!-- <a href="gestion/info_vie_privee.php" id="info_vie_privee"> -->
+				<img src="./images/icons/vie_privee.png" alt="" class="link">
+				Informations vie privée
+			</a>
+		</p>
+
+<!-- Ecrire aux administrateurs -->
+		
+		
+
+	</div>
+
+
+	<div id="new_login_footer" class="center">
+		
+			GEPI : Outil de gestion, de suivi, et de visualisation graphique des résultats scolaires (écoles, collèges, lycées)
+		
+		<br>
+		Copyright © 2001-2024
+	Thomas Belliard, Laurent Delineau
+, Eric Lebrun
+, Stéphane Boireau
+, Julien Jocal
+		<!--<a href="javascript:pigeon('thomas.belliard','free.fr');">Thomas Belliard</a>
+, <a href="javascript:pigeon('laurent.delineau','ac-poitiers.fr');">Laurent Delineau</a> 
+, <a href="javascript:pigeon('eric.lebrun','ac-poitiers.fr');">Eric Lebrun</a> 
+, <a href="javascript:pigeon('stephane.boireau','ac-rouen.fr');">Stéphane Boireau</a> 
+, <a href="javascript:pigeon('collegerb','free.fr');">Julien Jocal</a>  --> 
+		<br><br>
+		<img src="images/php-powered.png" alt="php powered">&nbsp;
+		<img src="images/mysql-powered.png" alt="mysql powered">
+	</div> 
+
+
+		
+
+
+
+
+<deepl-input-controller translate="no"></deepl-input-controller></body>
