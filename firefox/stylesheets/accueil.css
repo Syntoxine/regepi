@@ -5,6 +5,11 @@
   font-family: sans-serif;
 }
 
+#div_login_entete {
+  background-color: var(--secondary);
+  color: var(--headline);
+}
+
 body {
   margin: 0;
   width: 100vw;
