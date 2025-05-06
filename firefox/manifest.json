@@ -6,7 +6,10 @@
     "description": "Améliore et modernise l'interface de GEPI",
 
     "icons": {
-      "256": "icon.png"
+      "48": "favicon.svg",
+      "96": "favicon.svg",
+      "128": "favicon.svg",
+      "256": "favicon.svg"
     },
   
     "content_scripts": [
@@ -18,7 +21,7 @@
 
     "web_accessible_resources": [
       {
-        "resources": ["*.css", "*.js", "*.png", "*.ico"],
+        "resources": ["*.html", "*.css", "*.js", "*.png", "*.svg", "*.ico"],
         "matches": ["*://*.lfabuc.fr/ac/*"]
       }
     ]

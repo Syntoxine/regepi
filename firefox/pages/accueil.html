@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../stylesheets/accueil.css" />
+    <script src="../scripts/accueil.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="accueil.php" class="logo">GEPI</a>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="utilisateurs/mon_compte.php" id="profil"></a></li>
+          <li><a href="accueil.php">Accueil</a></li>
+          <li>
+            <a href="mod_alerte/form_alerte_bis.php?mode=afficher_boite_a"
+              >Alertes</a
+            >
+          </li>
+          <li><a href="logout.php?auto=0">Déconnexion</a></li>
+        </ul>
+      </div>
+      <img src="../assets/burger-menu-icon.svg" class="menu-hamburger" alt="burger menu icon"> 
+      <img src="../assets/cross-button.svg" class="menu-cross" alt="burger menu closing">
+    </nav>
+
+    <main>
+      <div id="board">
+        <div class="agenda-col">
+          <header title="Cahier de textes">
+            <h2>Cahier de textes</h2>
+          </header>
+          <div class="sections-wrapper">
+            <section id="devoirs">
+              <div class="icon">
+                <a href="cahier_texte/consultation.php">
+                  <img src="../assets/devoirs-icon.svg" />
+                  Devoirs
+                </a>
+              </div>
+            </section>
+            <section id="controles">
+              <div class="icon">
+                <a href="cahier_texte/controles_ele_resp.php">
+                  <img src="../assets/controles-icon.svg" />
+                  Contrôles
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="agenda-col">
+          <header title="Bulletins et notes">
+            <h2>Bulletins et notes</h2>
+          </header>
+          <div class="sections-wrapper">
+            <section id="releves">
+              <div class="icon">
+                <a href="cahier_notes/visu_releve_notes_ter.php">
+                  <img src="../assets/releves-icon.svg" />
+                  Relevés de notes
+                </a>
+              </div>
+            </section>
+            <section id="bulletins">
+              <div class="icon">
+                <a href="bulletin/bull_lect_erzb.php">
+                  <img src="../assets/bulletins-icon.svg" />
+                  Bulletins PDF
+                </a>
+              </div>
+            </section>
+            <section id="parcoursup">
+              <div class="icon">
+                <a href="bulletin/notes_anticip.php">
+                  <img src="../assets/parcoursup-icon.svg" />
+                  Notes Parcoursup
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

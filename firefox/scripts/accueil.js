@@ -1,17 +1,11 @@
-// // Remove undesirables
-// let alert_div = document.getElementById("temoin_messagerie_non_vide");
-// let button_divs = document.querySelector("#temoin_messagerie_non_vide + div");
+const menuHamburger = document.querySelector(".menu-hamburger");
+const menuCross = document.querySelector(".menu-cross")
+const navLinks = document.querySelector(".nav-links");
 
-// [alert_div, button_divs].forEach(element => {
-//     element.style.display = "none";
-// });
-
-
-// // Remove last connection
-// let last_conection = document.querySelector(".colonne1");
-// last_conection.style.display = "none";
-
-
-
-
+menuHamburger.addEventListener('click', ()=>{navLinks.classList.toggle('mobile-menu')});
+menuHamburger.addEventListener('click', ()=>{menuHamburger.classList.toggle('mobile-menu')});
+menuHamburger.addEventListener('click', ()=>{menuCross.classList.toggle('mobile-menu')});
+menuCross.addEventListener('click', ()=>{navLinks.classList.remove('mobile-menu')});
+menuCross.addEventListener('click', ()=>{menuHamburger.classList.toggle('mobile-menu')});
+menuCross.addEventListener('click', ()=>{menuCross.classList.toggle('mobile-menu')});
 console.log("accueil.js successfully loaded.");

@@ -1,21 +1,26 @@
-#bandeau {
-    background-color: var(--overlay2);
-    background: none;
+@import url(navbar.css);
+@import url(agenda.css);
+@import url(icon.css);
+
+:root {
+  font-family: sans-serif;
 }
 
-.bandeau_colonne {
-    color: var(--text);
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: url("../assets/cross-background.svg") repeat;
+  background-size: 3rem;
 }
 
-#bandeau a:link, #bandeau a:hover, #bandeau a:visited {
-    color: var(--pink);
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.accueil {
-    width: inherit;
-    margin: inherit;
-    padding: inherit;
-    font-size: inherit;
-    color: var(--mauve);
-    background: none;
+section {
+  padding: 0;
 }
