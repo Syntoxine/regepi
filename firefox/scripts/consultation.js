@@ -1,3 +1,4 @@
+// Fonction utilitaire pour obtenir un élément frère précédent
 function getPreviousSibling(node, selector) {
     let sibling = node.previousElementSibling;
     while (sibling) {
@@ -7,12 +8,15 @@ function getPreviousSibling(node, selector) {
     return null; // cas où il y a aucun élément frère correspondant
 }
 
+// Fonction pour convertir la date telle qu'est elle affichée dans le site
 function convertDate(date) {
     const monthMap = {"Jan.": "01", "Fev.": "02", "Mar.": "03", "Avr.": "04", "Mai": "05", "Juin": "06", "Juil.": "07", "Aout": "08", "Sept.": "09", "Oct.": "10", "Nov.": "11", "Dec.": "12"};
     const [weekday, day, month, year] = date.split(" ");
     return [year, monthMap[month], day];
 }
 
+// Cette fonction obtient le texte qui est sur la page et extrait les informations utiles
+// et sort une liste d'objets contenant ces informations
 function getHomework() {
     let homeworks = document.querySelectorAll('.matiere_a_faire');
     let homeworkData = [];
@@ -44,6 +48,9 @@ function getHomework() {
     return homeworkData;
 }
 
+// Cette fonction prend en entrée la liste d'objets des devoirs
+// et construit des élements HTML qu'on injecte dans la page
+// pour les afficher
 function renderHomework(homeworkItems) {
     const container = document.getElementById("homeworkContainer");
     

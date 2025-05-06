@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../scripts/consultation.js" defer></script>
     <title>Document</title>
-</head>
-<body>
-    <h1>Devoirs </h1>
+  </head>
+  <body>
+    <h1>Devoirs</h1>
     <div class="container-fluid px-2 px-sm-3 px-md-4">
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-10 col-md-8">
-              <div class="d-flex flex-column gap-4" id="homeworkContainer">
-                  <div class="alert alert-secondary text-center" id="noHomework">Pas de devoirs disponibles.</div>
-              </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8">
+          <div class="mb-4">
+            <label for="datePicker" class="form-label">Aller à une date :</label>
+            <div class="d-flex gap-2">
+                <input type="date" id="datePicker" class="form-control" />
+                <button id="goToDate" class="btn btn-primary">Aller</button>
+            </div>
+          </div>
+          <div class="d-flex flex-column gap-4" id="homeworkContainer">
+            <div class="alert alert-secondary text-center" id="noHomework">
+              Pas de devoirs disponibles.
+            </div>
           </div>
         </div>
       </div>
-</body>
+    </div>
+    <script>
+        console.log("BONJOUR!");
+        const datePicker = document.getElementById("datePicker");
+        const goButton = document.getElementById("goToDate");
+
+        // Lorsque le bouton "Aller" est cliqué
+        goButton.addEventListener('click', () => {
+            // On vérifie qu'une date valide est saisie
+            const selectedDate = new Date(datePicker.value);
+            if (isNaN(selectedDate)) return;
+
+            const year = selectedDate.getFullYear();
+            const month = String(selectedDate.getMonth() + 1).padStart(2, "0"); // On rajoute des 0 devant
+            const day = String(selectedDate.getDate()).padStart(2, "0");
+
+            console.log(`Selected date: ${year}-${month}-${day}`);
+
+            // On redirige vers l'URL de la date sélectionnée
+            const url = `https://lfabuc.fr/ac/cahier_texte/consultation.php?year=${year}&month=${month}&day=${day}`;
+            window.location.href = url;
+        });
+    </script>
+  </body>
 </html>
