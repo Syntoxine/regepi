@@ -20,19 +20,6 @@ document.head.appendChild(bootstrap_stylesheet);
 document.head.appendChild(bootstrap_script);
 
 
-// Ajout des documents de la librairie Bootstrap
-const bootstrap_stylesheet = document.createElement('link');
-bootstrap_stylesheet.rel = 'stylesheet';
-bootstrap_stylesheet.href = browser.runtime.getURL('stylesheets/bootstrap.min.css');
-const bootstrap_script = document.createElement('script');
-bootstrap_script.src = browser.runtime.getURL('scripts/bootstrap.bundle.min.js');
-
-document.head.appendChild(bootstrap_stylesheet);
-document.head.appendChild(bootstrap_script);
-
-
-
-
 // On ajoute la feuille de style principale
 let stylesheet = document.createElement('link');
 stylesheet.rel = 'stylesheet';

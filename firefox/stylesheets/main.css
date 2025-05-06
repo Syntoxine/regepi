@@ -20,7 +20,6 @@
 body {
     font-family: inherit;
     width: 100vw;
-    background-color: var(--base);
 }
 
 a, a:visited {
