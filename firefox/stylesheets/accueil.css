@@ -1,6 +1,7 @@
 @import url(navbar.css);
 @import url(agenda.css);
 @import url(icon.css);
+@import url(palette.css);
 
 :root {
   font-family: sans-serif;
