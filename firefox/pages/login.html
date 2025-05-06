@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connexion</title>
-    <link rel="stylesheet" href="../stylesheets/accueil.css" />
+    <link rel="stylesheet" href="../stylesheets/accueil.css"/>
+    <link rel="stylesheet" href="../stylesheets/login.css"/>
   </head>
   <body onload="observeur()">
 
@@ -17,7 +18,7 @@
       
     
     <!-- identification -->
-      <form action="login.php" method="post">
+      <form class="identification" id="identification" action="login.php" method="post">
         <input type="hidden" name="auth_sso_secours" value="n">
         <div id="identification">
             
@@ -28,7 +29,7 @@
             
     <!-- Entête -->				
                     
-          <div id="div_login_entete">
+          <div class="entete-login" id="div_login_entete">
             <h1>reGEPI - LFA-DFG</h1>
           </div>
               
@@ -84,6 +85,7 @@
               <input type="submit" name="submit" id="soumettre" value="Valider" tabindex="3">
             </p>
     <!-- Adresse courriel de l'administrateur -->
+            <br>
             <p class="droite" id="mot_passe">
               <a href="mailto:gepiadmin@lfabuc.fr" tabindex="4">Mot de passe oublié ?</a>
             </p>

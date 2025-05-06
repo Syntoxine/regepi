@@ -1,0 +1,21 @@
+form {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.entete-login#div_login_entete {
+    background-color: var(--background-color);
+    color: var(--headline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mot_passe {
+    color: var(--text);
+    font-size: small;
+}
