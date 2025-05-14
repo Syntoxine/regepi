@@ -41,7 +41,7 @@ page_script.defer = true;
 let match = document.location.pathname.match(/\/([^\/]+)\.php$/);
 
 // On obtient le nom de l'utilisateur
-let nomUtilisateur = "Profile"; // Nom d'utilisateur par défaut si on échoue à obtenir le nom d'utilisateur
+let nomUtilisateur = "Profil"; // Nom d'utilisateur par défaut si on échoue à obtenir le nom d'utilisateur
 if (match !== "login"){
     nomUtilisateur = document.querySelector("#bd_nom").innerText.split('(')[0].trim();
 }

@@ -1,6 +1,4 @@
 @import url(navbar.css);
-@import url(agenda.css);
-@import url(icon.css);
 @import url(palette.css);
 
 :root {
@@ -24,4 +22,91 @@ h2 {
 
 section {
   padding: 0;
+}
+
+#board {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 3rem;
+  margin: 1rem;
+}
+
+.sections-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.agenda-col {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding: 2rem;
+  padding-top: 1rem;
+  border-radius: 0.7rem;
+  background-color: oklch(1 0 0);
+  box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.icon > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon > a > svg {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  background-color: oklch(0.95 0 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid oklch(0.8 0 0);
+  box-shadow: 0.05rem 0.05rem 0.2rem 0.2rem oklch(66% 0 0 / 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon > a:hover > svg {
+  background-color: oklch(0.9 0 0);
+  transform: scale(1.1);
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.4rem oklch(66% 0 0 / 0.025);
+}
+
+@media screen and (width <= 768px) {
+  #board {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .agenda-col {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    padding: 3rem;
+  }
+}
+
+@media screen and (768px <= width <= 1200px) {
+  .agenda-col {
+    flex: 1 1 calc(16rem + (10rem * (100vw - 768px) / 432px));
+    max-width: 30rem;
+    min-width: 20rem;
+  }
+}
+
+@media screen and (1200px <= width) {
+  .agenda-col {
+    flex: 1 1 30rem;
+    max-width: 30rem;
+  }
 }
