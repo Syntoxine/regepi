@@ -7,9 +7,22 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 class="mt-4">Agenda</h1>
+    <nav class="navbar">
+      <a href="accueil.php" class="logo">GEPI</a>
 
-    <div class="container-fluid px-2 px-sm-3 px-md-4">
+      <div class="nav-links">
+        <ul>
+          <li><a href="/ac/utilisateurs/mon_compte.php" id="profil"></a></li>
+          <li><a href="/ac/accueil.php">Accueil</a></li>
+          <li><a href="/ac/mod_alerte/form_alerte_bis.php?mode=afficher_boite_a">Alertes</a></li>
+          <li><a href="/ac/logout.php?auto=0">Déconnexion</a></li>
+        </ul>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="2.188rem" height="2.188rem" viewBox="0 0 24 24" fill="none" class="menu-hamburger" alt="burger menu icon"><path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/><path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/><path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="2.188rem" height="2.188rem" viewBox="0 0 24 24" fill="none" class="menu-cross" alt="burger menu closing"><path d="M16 8L8 16M8 8L16 16" stroke="#000000" stroke-width="2" stroke-linecap="round"/></svg>
+    </nav>
+
+    <main class="container-fluid px-2 px-sm-3 px-md-4">
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8">
           <div class="mb-4">
@@ -26,7 +39,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer>
       <button id="theme-switch">
