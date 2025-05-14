@@ -10,8 +10,6 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background: url("../assets/cross-background.svg") repeat;
-  background-size: 3rem;
 }
 
 h2 {
