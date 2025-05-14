@@ -114,6 +114,26 @@ const observer = new MutationObserver((mutationsList, observer) => {
         renderHomework(homeworkItems);
         observer.disconnect();
     }
+    
+    const datePicker = document.getElementById("datePicker");
+    const goButton = document.getElementById("goToDate");
+    
+    // Lorsque le bouton "Aller" est cliqué
+    goButton.addEventListener('click', () => {
+        // On vérifie qu'une date valide est saisie
+        const selectedDate = new Date(datePicker.value);
+        if (isNaN(selectedDate)) return;
+    
+        const year = selectedDate.getFullYear();
+        const month = String(selectedDate.getMonth() + 1).padStart(2, "0"); // On rajoute des 0 devant
+        const day = String(selectedDate.getDate()).padStart(2, "0");
+    
+        console.log(`Selected date: ${year}-${month}-${day}`);
+    
+        // On redirige vers l'URL de la date sélectionnée
+        const url = `https://lfabuc.fr/ac/cahier_texte/consultation.php?year=${year}&month=${month}&day=${day}`;
+        window.location.href = url;
+    });
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
