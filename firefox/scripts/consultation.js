@@ -66,7 +66,7 @@ function renderHomework(homeworkItems) {
             });
         });
         
-        Object.keys(grouped).sort().forEach(date => {
+        Object.keys(grouped).forEach(date => {
             const card = document.createElement("div");
             card.className = "card shadow-sm";
     
