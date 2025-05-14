@@ -85,7 +85,7 @@ function renderGrades(subjects) {
           <tr><th colspan="7" class="fs-5">${subject}</th></tr>
           <tr>
             <th>Évaluation</th>
-            <th>Note /10</th>
+            <th>Note franco-allemande</th>
             <th>Note libre</th>
             <th>Date</th>
             <th>Min</th>
