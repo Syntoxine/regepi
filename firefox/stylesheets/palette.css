@@ -29,6 +29,28 @@ body{
     color: var(--text);
 }
 
+body.darkmode {
+    background-color: var(--background);
+    color: var(--text);
+}
+body.darkmode > .navbar {
+    background-color: var(--background);
+    color: var(--headline);
+}
+
+body.darkmode #board {
+    background-color: var(--background);
+    color: var(--text);
+}
+body.darkmode #board .agenda-col {
+    background-color: var(--background);
+    color: var(--text);
+}
+/* body.darkmode svg {
+    background-color: var(--background);
+    fill: var(--text)
+} */
+
 /* Caractéristiques du bouton permettant le changement de thème */
 
 #theme-switch {
@@ -36,7 +58,7 @@ body{
     width: 3.125rem;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +68,7 @@ body{
 }
 
 #theme-switch svg{
-    fill: var(--secondary);
+    fill: var(--text);
 }
 
 /* Affiche, en fonction de la présence de la classe darkmode, l'icône soleil ou l'icône lune */
