@@ -51,6 +51,7 @@
     right: 1.875rem;
   }
 
+  /* En fonction de la taille de l'écran, la navbar s'affiche de manières différentes */
   @media screen and (width <= 768px) {
     .navbar {
         padding: 0;
